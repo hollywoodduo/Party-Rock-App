@@ -75,14 +75,14 @@
                                 <rect key="frame" x="0.0" y="219" width="375" height="456"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="NzR-Wu-ZtA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyCell" rowHeight="80" id="NzR-Wu-ZtA" customClass="PartyCell" customModule="Party_Rock_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NzR-Wu-ZtA" id="6Yk-cr-Bfe">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="partybanner" translatesAutoresizingMaskIntoConstraints="NO" id="dpL-QI-jLL">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="partybanner" translatesAutoresizingMaskIntoConstraints="NO" id="dpL-QI-jLL">
                                                     <rect key="frame" x="8" y="8" width="68" height="68"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="68" id="DF7-UP-UZq"/>
@@ -101,13 +101,17 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="dpL-QI-jLL" firstAttribute="centerY" secondItem="6Yk-cr-Bfe" secondAttribute="centerY" id="DLk-mK-eTq"/>
                                                 <constraint firstItem="1l2-uK-HFt" firstAttribute="leading" secondItem="dpL-QI-jLL" secondAttribute="trailing" constant="8" id="RcJ-7R-vdN"/>
-                                                <constraint firstItem="dpL-QI-jLL" firstAttribute="centerX" secondItem="6Yk-cr-Bfe" secondAttribute="centerX" id="n8i-w1-gok"/>
                                                 <constraint firstItem="1l2-uK-HFt" firstAttribute="centerY" secondItem="6Yk-cr-Bfe" secondAttribute="centerY" id="ner-Mf-Oic"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="1l2-uK-HFt" secondAttribute="trailing" id="nnS-8P-tcw"/>
                                                 <constraint firstItem="dpL-QI-jLL" firstAttribute="leading" secondItem="6Yk-cr-Bfe" secondAttribute="leading" id="zHF-fX-ZfS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoPreviewImage" destination="dpL-QI-jLL" id="mOM-Wu-Wde"/>
+                                            <outlet property="videoTitle" destination="1l2-uK-HFt" id="eZv-NF-2Ww"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -127,6 +131,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="iZ7-Wd-33J" id="0Td-mV-1BA"/>
                         <segue destination="HS9-K1-bME" kind="showDetail" identifier="VideoVC" id="jZm-6E-XRe"/>
                     </connections>
                 </viewController>
